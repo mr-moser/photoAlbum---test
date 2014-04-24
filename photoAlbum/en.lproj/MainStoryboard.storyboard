@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QfO-8w-Jbk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="sIf-Oq-OuQ">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="QfO-8w-Jbk" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D7B-df-qWG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="d5j-t4-rQe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETn-ng-CNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-189" y="96"/>
+        </scene>
+        <!--Albom View Controller - Мои альбомы-->
+        <scene sceneID="5">
+            <objects>
+                <viewController storyboardIdentifier="albomViewController" id="2" customClass="albomViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-da-QXo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="zgV-ZQ-XyX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlp-bT-218" userLabel="iCarousel" customClass="iCarousel">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="Dgk-ke-BfJ"/>
+                                    <outlet property="delegate" destination="2" id="Ki2-LO-psP"/>
+                                </connections>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="d6Q-BC-QhX">
+                                <items>
+                                    <barButtonItem title="Стиль" id="pvq-EM-S0p">
+                                        <connections>
+                                            <action selector="showPopupMenu:" destination="2" id="edt-F6-8Na"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="YHF-Xa-czK">
+                                <items>
+                                    <navigationItem title="Мои альбомы" id="5dS-Lq-sYg">
+                                        <barButtonItem key="leftBarButtonItem" title="+" id="vps-fx-RZC">
+                                            <connections>
+                                                <action selector="insertItem" destination="2" id="bWy-SK-ehW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="3G2-5t-jvU">
+                                            <connections>
+                                                <action selector="removeItem" destination="2" id="7eh-8u-Pdx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YHF-Xa-czK" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="2kf-op-nDs"/>
+                            <constraint firstItem="d6Q-BC-QhX" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="4Rq-td-OiB"/>
+                            <constraint firstAttribute="trailing" secondItem="kXh-da-QXo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7Rd-hR-0ZU"/>
+                            <constraint firstItem="YHF-Xa-czK" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="7U7-wB-cCt"/>
+                            <constraint firstItem="d6Q-BC-QhX" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="F5q-Wi-vwz"/>
+                            <constraint firstItem="Wlp-bT-218" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="RTX-q6-HEN"/>
+                            <constraint firstAttribute="bottom" secondItem="Wlp-bT-218" secondAttribute="bottom" constant="97" id="aw9-Nq-GyY"/>
+                            <constraint firstItem="d6Q-BC-QhX" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="gUq-3W-Cs8"/>
+                            <constraint firstItem="kXh-da-QXo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hJq-mk-0fY"/>
+                            <constraint firstItem="kXh-da-QXo" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="qhd-7K-KY2"/>
+                            <constraint firstItem="YHF-Xa-czK" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="qlv-vf-0kH"/>
+                            <constraint firstItem="Wlp-bT-218" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="uVY-83-h0x"/>
+                            <constraint firstItem="YHF-Xa-czK" firstAttribute="bottom" secondItem="Wlp-bT-218" secondAttribute="top" type="default" id="wKr-EY-jTO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои альбомы" id="5Hu-8s-3GZ"/>
+                    <connections>
+                        <outlet property="bottomToolBar" destination="d6Q-BC-QhX" id="Ido-qg-hok"/>
+                        <outlet property="carousel" destination="Wlp-bT-218" id="Zvn-SO-QHe"/>
+                        <outlet property="deleteButton" destination="3G2-5t-jvU" id="BPs-v2-347"/>
+                        <outlet property="styleButton" destination="pvq-EM-S0p" id="UbM-AE-rl9"/>
+                        <outlet property="welcomeLabel" destination="kXh-da-QXo" id="sNo-eS-Sol"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="96"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Lpn-zZ-eOP">
+            <objects>
+                <viewController storyboardIdentifier="photoViewController" id="9My-MB-U2O" customClass="photoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5k-u9-d5w">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-xc-XUh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="TGp-75-Whs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="Vub-Zn-bsj">
+                                <items>
+                                    <navigationItem title="Фотографии из альбома" id="cJJ-FW-1xE">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="Xbz-6d-PAE">
+                                            <connections>
+                                                <action selector="backButtonPress:" destination="9My-MB-U2O" id="IJF-vX-ymw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="YyW-R6-2hW">
+                                            <connections>
+                                                <action selector="saveImageToAlbum" destination="9My-MB-U2O" id="NTF-rP-sE6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="0Ag-js-jS9">
+                                <items>
+                                    <barButtonItem title="Стиль" id="W4J-wO-YbC">
+                                        <connections>
+                                            <action selector="showPopupMenu:" destination="9My-MB-U2O" id="jbZ-ae-D2R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eaj-dE-e3q"/>
+                                    <barButtonItem title="+" id="rkB-J2-Vrz">
+                                        <connections>
+                                            <action selector="photoFromAlbum" destination="9My-MB-U2O" id="1w4-TN-ikL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="30" systemItem="camera" id="Rl3-Cg-9A0">
+                                        <connections>
+                                            <action selector="photoFromCamera" destination="9My-MB-U2O" id="1DE-MU-R5T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FMW-gj-xFx"/>
+                                    <barButtonItem systemItem="pageCurl" id="qho-Sb-S3J">
+                                        <connections>
+                                            <action selector="applyImageForAlbum:" destination="9My-MB-U2O" id="gVh-ye-V0h"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KQ2-oa-qra"/>
+                                    <barButtonItem systemItem="trash" id="wHv-hw-Ug7">
+                                        <connections>
+                                            <action selector="deleteCurrentPhoto:" destination="9My-MB-U2O" id="ceQ-tb-BrK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbQ-45-bI2" userLabel="iCarousel" customClass="iCarousel">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9My-MB-U2O" id="iNe-ao-PFX"/>
+                                    <outlet property="delegate" destination="9My-MB-U2O" id="JSr-8E-YyK"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="p6x-8E-E1l"/>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vub-Zn-bsj" firstAttribute="top" secondItem="T5k-u9-d5w" secondAttribute="top" type="default" id="59r-ol-0ZQ"/>
+                            <constraint firstItem="0Ag-js-jS9" firstAttribute="top" secondItem="p6x-8E-E1l" secondAttribute="bottom" type="default" id="Fb2-AH-D1a"/>
+                            <constraint firstItem="Vub-Zn-bsj" firstAttribute="trailing" secondItem="T5k-u9-d5w" secondAttribute="trailing" type="default" id="L5A-tz-McG"/>
+                            <constraint firstItem="p6x-8E-E1l" firstAttribute="top" secondItem="Vub-Zn-bsj" secondAttribute="bottom" type="default" id="RMy-fb-Lty"/>
+                            <constraint firstItem="sbQ-45-bI2" firstAttribute="top" secondItem="T5k-u9-d5w" secondAttribute="top" constant="65" id="SYw-dy-jRy"/>
+                            <constraint firstItem="sbQ-45-bI2" firstAttribute="trailing" secondItem="T5k-u9-d5w" secondAttribute="trailing" type="default" id="T0R-hc-mLl"/>
+                            <constraint firstAttribute="bottom" secondItem="sbQ-45-bI2" secondAttribute="bottom" constant="76" id="U8o-4n-F04"/>
+                            <constraint firstItem="p6x-8E-E1l" firstAttribute="leading" secondItem="T5k-u9-d5w" secondAttribute="leading" type="default" id="ZzX-1T-1eB"/>
+                            <constraint firstItem="Vub-Zn-bsj" firstAttribute="leading" secondItem="T5k-u9-d5w" secondAttribute="leading" type="default" id="daR-sX-Ga7"/>
+                            <constraint firstItem="p6x-8E-E1l" firstAttribute="trailing" secondItem="T5k-u9-d5w" secondAttribute="trailing" type="default" id="euX-Sl-8ys"/>
+                            <constraint firstItem="dvL-xc-XUh" firstAttribute="centerY" secondItem="p6x-8E-E1l" secondAttribute="centerY" type="default" id="hmK-QT-oXI"/>
+                            <constraint firstAttribute="trailing" secondItem="dvL-xc-XUh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="it3-6c-Jwj"/>
+                            <constraint firstItem="0Ag-js-jS9" firstAttribute="trailing" secondItem="T5k-u9-d5w" secondAttribute="trailing" type="default" id="krr-yU-Nz8"/>
+                            <constraint firstItem="sbQ-45-bI2" firstAttribute="leading" secondItem="T5k-u9-d5w" secondAttribute="leading" type="default" id="pwe-Nh-x9Z"/>
+                            <constraint firstItem="0Ag-js-jS9" firstAttribute="bottom" secondItem="T5k-u9-d5w" secondAttribute="bottom" type="default" id="uwT-PK-EfC"/>
+                            <constraint firstItem="dvL-xc-XUh" firstAttribute="leading" secondItem="T5k-u9-d5w" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wJl-q3-kWY"/>
+                            <constraint firstItem="0Ag-js-jS9" firstAttribute="leading" secondItem="T5k-u9-d5w" secondAttribute="leading" type="default" id="zmL-A4-Zgs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rid-ra-xgy"/>
+                    <connections>
+                        <outlet property="carousel" destination="sbQ-45-bI2" id="VXq-rw-P91"/>
+                        <outlet property="deleteButton" destination="wHv-hw-Ug7" id="EF4-60-YPu"/>
+                        <outlet property="imageForAlbumButton" destination="qho-Sb-S3J" id="cOT-pb-jyz"/>
+                        <outlet property="saveButton" destination="YyW-R6-2hW" id="LNP-tN-SEv"/>
+                        <outlet property="selectedImageView" destination="p6x-8E-E1l" id="UWZ-7f-R9d"/>
+                        <outlet property="styleButton" destination="W4J-wO-YbC" id="8fK-eB-TSr"/>
+                        <outlet property="welcomeLabelPhoto" destination="dvL-xc-XUh" id="xIc-IB-9Zf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kE6-eL-phb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="96"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="albomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/albomViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="insertItem"/>
+                <relationship kind="action" name="removeItem"/>
+                <relationship kind="action" name="showPopupMenu:"/>
+                <relationship kind="outlet" name="bottomToolBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="styleButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="welcomeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="iCarousel" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="photoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/photoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="applyImageForAlbum:"/>
+                <relationship kind="action" name="backButtonPress:"/>
+                <relationship kind="action" name="deleteCurrentPhoto:"/>
+                <relationship kind="action" name="photoFromAlbum"/>
+                <relationship kind="action" name="photoFromCamera"/>
+                <relationship kind="action" name="saveImageToAlbum"/>
+                <relationship kind="action" name="showPopupMenu:"/>
+                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="filterButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="imageForAlbumButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="selectedImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="styleButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="welcomeLabelPhoto" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
